@@ -126,7 +126,7 @@ public class SimpleDefaults: NSObject {
         }
     }
     
-    public func setUserDefault(#key: NSString, value: AnyObject?) {
+    public func setUserDefaultValue(#value: AnyObject?, key: NSString) {
         _log("Setting user default \"\(value)\" for key \"\(key)\"")
         objc_sync_enter(_userDefaults)
         _userDefaults[key] = value
@@ -193,7 +193,7 @@ public class SimpleDefaults: NSObject {
         
     }
     
-    public func setDeviceDefault(#key: NSString, value: AnyObject?) {
+    public func setDeviceDefaultValue(#value: AnyObject?, key: NSString) {
         _log("Setting device default \"\(value)\" for key \"\(key)\"")
         objc_sync_enter(_deviceDefaults)
         _deviceDefaults[key] = value
